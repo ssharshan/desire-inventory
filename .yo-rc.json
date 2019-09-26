@@ -1,0 +1,46 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "diInventory",
+    "packageName": "com.di.inventory",
+    "packageFolder": "com/di/inventory",
+    "serverPort": 8888,
+    "serviceDiscoveryType": "eureka",
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "enableSwaggerCodegen": "true",
+    "messageBroker": "kafka",
+    "buildTool": "maven",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "protractor"
+    ],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": [
+      "en"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "6.3.1",
+    "jwtSecretKey": "YWYwYzgzNTlkOTA2ZTA2OWMzZWMzM2VjY2M5OWUxOTdjZDhmMTc0ZDYxZjY0ZGU4NmM1MGExOWFjMWUxOGYzZDIxMjBkMDdkMTVkZTdjNTE5OTZlYjhmOTE3NjQxYmJlNTU4Nzk4ODU5MGM0OTE2ZDlmMjhkMTEyMjUwMWM0OTk=",
+    "embeddableLaunchScript": false,
+    "clientTheme": "none",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "blueprints": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "ssharshan",
+  "repository-name": "desire-inventory"
+}
