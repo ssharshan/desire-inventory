@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="productDetails">
+            <h2><span jhiTranslate="diInventoryApp.productDetails.detail.title">Product Details</span> {{productDetails.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="diInventoryApp.productDetails.weight">Weight</span></dt>
+                <dd>
+                    <span>{{productDetails.weight}}</span>
+                </dd>
+                <dt><span jhiTranslate="diInventoryApp.productDetails.mrp">Mrp</span></dt>
+                <dd>
+                    <span>{{productDetails.mrp}}</span>
+                </dd>
+                <dt><span jhiTranslate="diInventoryApp.productDetails.distributorPrice">Distributor Price</span></dt>
+                <dd>
+                    <span>{{productDetails.distributorPrice}}</span>
+                </dd>
+                <dt><span jhiTranslate="diInventoryApp.productDetails.distributorMargin">Distributor Margin</span></dt>
+                <dd>
+                    <span>{{productDetails.distributorMargin}}</span>
+                </dd>
+                <dt><span jhiTranslate="diInventoryApp.productDetails.lotCount">Lot Count</span></dt>
+                <dd>
+                    <span>{{productDetails.lotCount}}</span>
+                </dd>
+                <dt><span jhiTranslate="diInventoryApp.productDetails.available">Available</span></dt>
+                <dd>
+                    <span>{{productDetails.available}}</span>
+                </dd>
+                <dt><span jhiTranslate="diInventoryApp.productDetails.shortcut">Shortcut</span></dt>
+                <dd>
+                    <span>{{productDetails.shortcut}}</span>
+                </dd>
+                <dt><span jhiTranslate="diInventoryApp.productDetails.product">Product</span></dt>
+                <dd>
+                    <div *ngIf="productDetails.product">
+                        <a [routerLink]="['/product', productDetails.product?.id, 'view']">{{productDetails.product?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/product-details', productDetails.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

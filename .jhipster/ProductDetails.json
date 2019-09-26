@@ -1,0 +1,53 @@
+{
+    "name": "ProductDetails",
+    "fields": [
+        {
+            "fieldName": "weight",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "mrp",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "distributorPrice",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "distributorMargin",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "lotCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "available",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "shortcut",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "product",
+            "otherEntityName": "product",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190926131742",
+    "entityTableName": "product_details",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
