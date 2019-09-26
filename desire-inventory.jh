@@ -1,0 +1,92 @@
+entity Company{
+	id UUID required,
+	name String required,
+    shortcut String
+    
+}
+
+entity Category{
+	id UUID required,
+	name String required
+}
+
+entity Product{
+	id UUID,
+	name String required,
+    shortcut String,
+    cgst Float required,
+    sgst Float required,
+    hsn String
+}
+
+entity ProductDetails{
+	id UUID required,
+    weight Integer,
+    mrp Float required,
+    distributorPrice Float,
+    distributorMargin Float,
+    lotCount Integer,
+    available Integer,
+    shortcut String
+}
+
+entity Order{
+	id UUID required,
+    date Instant required,
+    amount Float required,
+    qty	Integer required,
+    discount Float
+}
+
+entity Invoice{
+	id UUID required,
+    date Instant required,
+    amount Float required,
+    discount Float,
+    status InvoiceStatus required
+}
+
+entity Customer{
+	id UUID required,
+    name String required,
+    address String,
+    lat Double,
+    longitude Double,
+    phone String,
+    city String,
+  	state String
+}
+
+enum InvoiceStatus {
+    PAID, OPEN, DUE
+}
+
+relationship OneToMany{
+	Company{products} to Product
+    Product{types} to ProductDetails
+    //Invoice{orders} to Order
+    Customer{invoices} to Invoice
+}
+
+relationship OneToOne{
+	Product{category} to Category
+    Order{product} to ProductDetails
+}
+
+relationship ManyToOne{
+	Order{invoice} to Invoice{orders}
+    //Invoice{customer} to Customer{invoices}
+}
+
+// Set pagination options
+paginate Product, ProductDetails, Company, Invoice, Order, Customer with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
