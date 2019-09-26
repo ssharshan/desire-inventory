@@ -1,0 +1,10 @@
+{
+  "diInventoryApp": {
+    "InvoiceStatus": {
+      "null": "",
+      "PAID": "PAID",
+      "OPEN": "OPEN",
+      "DUE": "DUE"
+    }
+  }
+}

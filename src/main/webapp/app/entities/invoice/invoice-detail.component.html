@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="invoice">
+            <h2><span jhiTranslate="diInventoryApp.invoice.detail.title">Invoice</span> {{invoice.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="diInventoryApp.invoice.date">Date</span></dt>
+                <dd>
+                    <span>{{invoice.date}}</span>
+                </dd>
+                <dt><span jhiTranslate="diInventoryApp.invoice.amount">Amount</span></dt>
+                <dd>
+                    <span>{{invoice.amount}}</span>
+                </dd>
+                <dt><span jhiTranslate="diInventoryApp.invoice.discount">Discount</span></dt>
+                <dd>
+                    <span>{{invoice.discount}}</span>
+                </dd>
+                <dt><span jhiTranslate="diInventoryApp.invoice.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'diInventoryApp.InvoiceStatus.' + invoice.status}}">{{invoice.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="diInventoryApp.invoice.customer">Customer</span></dt>
+                <dd>
+                    <div *ngIf="invoice.customer">
+                        <a [routerLink]="['/customer', invoice.customer?.id, 'view']">{{invoice.customer?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/invoice', invoice.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
